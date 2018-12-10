@@ -6,14 +6,22 @@
 
 using namespace std;
 
+enum StackState {LEFT_BRACKET, RIGHT_BRACKET, ADD, MULT};
 class TPostfix
 {
   string infix;
   string postfix;
+  void MoveState(StackState* s1, StackState* s2, StackState to);
+  void FillLine(TStack<char>* st);
+  bool TryParce(string s, double* d);
 public:
   TPostfix()
   {
-    infix = "a + b";
+    infix = "1 + 3";
+  }
+  TPostfix(string s)
+  {
+	  infix = s;
   }
   string GetInfix() { return infix; }
   string GetPostfix() { return postfix; }

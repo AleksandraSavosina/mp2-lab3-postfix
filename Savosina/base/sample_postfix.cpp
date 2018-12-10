@@ -6,17 +6,18 @@ using namespace std;
 
 int main()
 {
-  string expression;
-  TPostfix postfix;
-  double res;
+  string expression;	// выражение, введёное с клавиатуры
+ 
+  double res;			// результат выражения
 
-  setlocale(LC_ALL, "Russian");
-  //cout << "Введите арифметическое выражение: ";
-  //cin >> expression;
-  //cout << expression << endl;
-  cout << "Арифметическое выражение: " << postfix.GetInfix() << endl;
+  //setlocale(LC_ALL, "Russian");
+  cout << "Enter expression: ";
+  cin >> expression;
+  cout << expression << endl;
+  TPostfix postfix(expression);		// нужно для получения конечного результата (реализует логику класса)
+  cout << "Areefmeticheskoe virazhenie: " << postfix.GetInfix() << endl;
   postfix.ToPostfix();
-  cout << "Постфиксная форма: " << postfix.GetPostfix() << endl;
+  cout << "Posmotret' na postfix: " << postfix.GetPostfix() << endl;
   res = postfix.Calculate();
   cout << res << endl;
 

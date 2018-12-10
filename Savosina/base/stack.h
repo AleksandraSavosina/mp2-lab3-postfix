@@ -22,6 +22,28 @@ public:
   {
     delete [] pMem;
   }
+  void Push(T el)
+  {
+	  if (IsFull())
+		  throw "Stack is full";
+
+	  top++;
+	  pMem[top] = el;
+  }
+
+  T Pop()	// достаём последний элемент из стека и удаляем его
+  {
+	  if (IsEmpty())
+		  throw "Stakc is empty";
+
+	  top--;
+	  return pMem[top + 1];
+  }
+
+  bool IsEmpty() { return top == -1; }
+  bool IsFull() { return top == size - 1; }
 };
+
+
 
 #endif
