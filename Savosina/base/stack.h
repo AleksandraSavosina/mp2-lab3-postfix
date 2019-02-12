@@ -24,20 +24,20 @@ public:
   }
   void Push(T el)
   {
-	  if (IsFull())
-		  throw "Stack is full";
+  if (IsFull())
+    throw "Stack is full";
 
-	  top++;
-	  pMem[top] = el;
+  top++;
+  pMem[top] = el;
   }
 
   T Pop()	// достаём последний элемент из стека и удаляем его
   {
-	  if (IsEmpty())
-		  throw "Stakc is empty";
+  if (IsEmpty())
+    throw "Stakc is empty";
 
-	  top--;
-	  return pMem[top + 1];
+  top--;
+  return pMem[top + 1];
   }
 
   bool IsEmpty() { return top == -1; }
